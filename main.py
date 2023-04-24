@@ -1,4 +1,11 @@
 import discord
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Define las intenciones necesarias para tu bot
 intents = discord.Intents.default()
@@ -28,5 +35,5 @@ async def on_message(message):
         print('Hola soy bot')
 
 # Ejecuta el bot con el token correspondiente
-client.run('MTEwMDEzNjk2NzQ2OTAyNzM5MA.Gst7Xd.pRyzNbxhpmLrKbeaPgg_TeoDavbjMqhzMyO9HQ')
+client.run(DISCORD_TOKEN)
 
